@@ -27,7 +27,7 @@ auto main() -> int {
     fmt::print("=== spdlog Library Example ===\n");
     spdlog::info("Welcome to spdlog!");
     spdlog::warn("This is a warning message");
-    spdlog::error("This is an error message\n");
+    spdlog::error("This is an error message");
 
     // range-v3 example: ranges and views
     fmt::print("=== range-v3 Library Example ===\n");
