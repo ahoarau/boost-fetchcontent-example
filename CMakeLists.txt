@@ -30,7 +30,7 @@ FetchContent_Declare(
 FetchContent_Declare(
     eigen
     GIT_REPOSITORY https://github.com/eigenteam/eigen-git-mirror.git
-    GIT_TAG master
+    GIT_TAG 3.4.0
     GIT_SHALLOW TRUE
 )
 
