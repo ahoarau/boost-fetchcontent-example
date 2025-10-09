@@ -11,13 +11,15 @@ FetchContent_Declare(
 FetchContent_Declare(
     fmt
     GIT_REPOSITORY https://github.com/fmtlib/fmt.git
-    GIT_TAG 10.2.1
+    GIT_TAG 12.0.0
+    GIT_SHALLOW TRUE
 )
 
 FetchContent_Declare(
     spdlog
     GIT_REPOSITORY https://github.com/gabime/spdlog.git
-    GIT_TAG v1.13.0
+    GIT_TAG v1.15.3
+    GIT_SHALLOW TRUE
 )
 set(SPDLOG_FMT_EXTERNAL ON CACHE INTERNAL "")
 
@@ -25,12 +27,13 @@ FetchContent_Declare(
     range-v3
     GIT_REPOSITORY https://github.com/ericniebler/range-v3.git
     GIT_TAG 0.12.0
+    GIT_SHALLOW TRUE
 )
 
 FetchContent_Declare(
     eigen
-    GIT_REPOSITORY https://github.com/eigenteam/eigen-git-mirror.git
-    GIT_TAG 3.4.0
+    GIT_REPOSITORY https://gitlab.com/libeigen/eigen.git
+    GIT_TAG 5.0.0
     GIT_SHALLOW TRUE
 )
 
