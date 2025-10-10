@@ -7,6 +7,7 @@ FetchContent_Declare(
     URL https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-cmake.zip
     URL_HASH MD5=2b36c6002d2a35eac3e6cb07c0097f77
 )
+FetchContent_MakeAvailable(boost)
 
 FetchContent_Declare(
     fmt
@@ -14,30 +15,35 @@ FetchContent_Declare(
     GIT_TAG 12.0.0
     GIT_SHALLOW TRUE
 )
+FetchContent_MakeAvailable(fmt)
 
+set(SPDLOG_FMT_EXTERNAL ON CACHE INTERNAL "")
 FetchContent_Declare(
     spdlog
     GIT_REPOSITORY https://github.com/gabime/spdlog.git
     GIT_TAG v1.15.3
     GIT_SHALLOW TRUE
 )
-set(SPDLOG_FMT_EXTERNAL ON CACHE INTERNAL "")
+FetchContent_MakeAvailable(spdlog)
 
+set(RANGES_BUILD_CALENDAR_EXAMPLE OFF CACHE INTERNAL "")
+set(RANGE_V3_TESTS OFF CACHE INTERNAL "")
+set(RANGE_V3_EXAMPLES OFF CACHE INTERNAL "")
 FetchContent_Declare(
     range-v3
     GIT_REPOSITORY https://github.com/ericniebler/range-v3.git
     GIT_TAG 0.12.0
     GIT_SHALLOW TRUE
 )
+FetchContent_MakeAvailable(range-v3)
 
 FetchContent_Declare(
     eigen
     GIT_REPOSITORY https://gitlab.com/libeigen/eigen.git
     GIT_TAG 5.0.0
-    GIT_SHALLOW TRUE
+    GIT_SHALLOW TRUE    
 )
-
-FetchContent_MakeAvailable(boost fmt spdlog range-v3 eigen)
+FetchContent_MakeAvailable(eigen)
 
 add_executable(boost_example boost_example.cc)
 target_compile_features(boost_example PRIVATE cxx_std_17)
