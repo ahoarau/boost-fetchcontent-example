@@ -17,18 +17,18 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(fmt)
 
-set(SPDLOG_FMT_EXTERNAL ON CACHE INTERNAL "")
+set(SPDLOG_FMT_EXTERNAL ON CACHE BOOL "")
 FetchContent_Declare(
     spdlog
     GIT_REPOSITORY https://github.com/gabime/spdlog.git
-    GIT_TAG v1.15.3
+    GIT_TAG v1.16.0
     GIT_SHALLOW TRUE
 )
 FetchContent_MakeAvailable(spdlog)
 
-set(RANGES_BUILD_CALENDAR_EXAMPLE OFF CACHE INTERNAL "")
-set(RANGE_V3_TESTS OFF CACHE INTERNAL "")
-set(RANGE_V3_EXAMPLES OFF CACHE INTERNAL "")
+set(RANGES_BUILD_CALENDAR_EXAMPLE OFF CACHE BOOL "")
+set(RANGE_V3_TESTS OFF CACHE BOOL "")
+set(RANGE_V3_EXAMPLES OFF CACHE BOOL "")
 FetchContent_Declare(
     range-v3
     GIT_REPOSITORY https://github.com/ericniebler/range-v3.git
