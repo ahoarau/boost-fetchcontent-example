@@ -1,7 +1,14 @@
 cmake_minimum_required(VERSION 3.22...4.1)
-project(boost-fetchcontent-example)
-
 include(FetchContent)
+
+FetchContent_Declare(
+    portable_cc_toolchain
+    URL "https://github.com/CACI-International/cpp-toolchain/releases/download/v2025.10.31/cmake_portable_cc_toolchain-v2025.10.31.tar.gz"
+    URL_HASH SHA256=e7bb4f142fc10b49bcb42f9e5ad3b2551e355224ad35f391d54c828603df932a
+)
+FetchContent_MakeAvailable(portable_cc_toolchain)
+set(CMAKE_TOOLCHAIN_FILE ${portable_cc_toolchain_SOURCE_DIR}/toolchain.cmake)
+
 FetchContent_Declare(
     boost
     URL https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-cmake.zip
@@ -37,6 +44,9 @@ FetchContent_Declare(
     URL_HASH MD5=3804ac4802bb18a75874d7a165c5c6f3  
 )
 FetchContent_MakeAvailable(eigen)
+
+project(boost-fetchcontent-example)
+
 
 add_executable(boost_example boost_example.cc)
 target_compile_features(boost_example PRIVATE cxx_std_17)
