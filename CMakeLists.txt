@@ -24,13 +24,10 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(spdlog)
 
-set(RANGES_BUILD_CALENDAR_EXAMPLE OFF CACHE BOOL "")
-set(RANGE_V3_TESTS OFF CACHE BOOL "")
-set(RANGE_V3_EXAMPLES OFF CACHE BOOL "")
 FetchContent_Declare(
     range-v3
-    URL https://github.com/ericniebler/range-v3/archive/refs/tags/0.12.0.zip
-    URL_HASH MD5=e220e3f545fdf46241b4f139822d73a1
+    URL https://github.com/ericniebler/range-v3/archive/ca1388fb9da8e69314dda222dc7b139ca84e092f.zip
+    URL_HASH MD5=05add5653790ed453d7c4034fe344e01
 )
 FetchContent_MakeAvailable(range-v3)
 
