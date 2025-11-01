@@ -11,18 +11,16 @@ FetchContent_MakeAvailable(boost)
 
 FetchContent_Declare(
     fmt
-    GIT_REPOSITORY https://github.com/fmtlib/fmt.git
-    GIT_TAG 12.0.0
-    GIT_SHALLOW TRUE
+    URL https://github.com/fmtlib/fmt/releases/download/12.1.0/fmt-12.1.0.zip
+    URL_HASH MD5=028c6979cad96a4260154f091885171a
 )
 FetchContent_MakeAvailable(fmt)
 
 set(SPDLOG_FMT_EXTERNAL ON CACHE BOOL "")
 FetchContent_Declare(
     spdlog
-    GIT_REPOSITORY https://github.com/gabime/spdlog.git
-    GIT_TAG v1.16.0
-    GIT_SHALLOW TRUE
+    URL https://github.com/gabime/spdlog/archive/refs/tags/v1.16.0.zip
+    URL_HASH MD5=9492e71daefbfdfb86727b3628066b5a
 )
 FetchContent_MakeAvailable(spdlog)
 
@@ -31,17 +29,15 @@ set(RANGE_V3_TESTS OFF CACHE BOOL "")
 set(RANGE_V3_EXAMPLES OFF CACHE BOOL "")
 FetchContent_Declare(
     range-v3
-    GIT_REPOSITORY https://github.com/ericniebler/range-v3.git
-    GIT_TAG 0.12.0
-    GIT_SHALLOW TRUE
+    URL https://github.com/ericniebler/range-v3/archive/refs/tags/0.12.0.zip
+    URL_HASH MD5=e220e3f545fdf46241b4f139822d73a1
 )
 FetchContent_MakeAvailable(range-v3)
 
 FetchContent_Declare(
     eigen
-    GIT_REPOSITORY https://gitlab.com/libeigen/eigen.git
-    GIT_TAG 5.0.0
-    GIT_SHALLOW TRUE    
+    URL https://gitlab.com/libeigen/eigen/-/archive/5.0.0/eigen-5.0.0.zip
+    URL_HASH MD5=3804ac4802bb18a75874d7a165c5c6f3  
 )
 FetchContent_MakeAvailable(eigen)
 
