@@ -1,0 +1,60 @@
+name: Windows, macOS, Linux CI
+
+on: push
+
+jobs:
+  ubuntu:
+    name: Ubuntu ${{ matrix.os }}
+    runs-on: ubuntu-${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: 22.04
+          - os: 24.04
+    steps:
+      - uses: actions/checkout@v5
+      - run: cmake -G Ninja -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - run: cmake --build build --config Release
+
+  archlinux:
+    name: Archlinux
+    runs-on: ubuntu-latest
+    container:
+      image: docker://archlinux:latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: pacman -Syu --noconfirm cmake ninja gcc catch2
+
+      - run: cmake -G Ninja -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - run: cmake --build build --config Release
+
+  windows:
+    name: Windows ${{ matrix.os }}
+    runs-on: windows-${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: 2022
+          - os: 2025
+    steps:
+      - uses: actions/checkout@v5
+      - run: cmake -G Ninja -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - run: cmake --build build --config Release
+
+  macos:
+    name: ${{ matrix.target.name }}
+    runs-on: ${{ matrix.target.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          [
+            { os: macos-26, name: macOS (Apple Silicon) },
+            { os: macos-15-intel, name: macOS (Intel) },
+          ]
+    steps:
+      - uses: actions/checkout@v5
+      - run: cmake -G Ninja -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - run: cmake --build build --config Release
