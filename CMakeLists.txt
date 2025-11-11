@@ -33,8 +33,8 @@ FetchContent_MakeAvailable(range-v3)
 
 FetchContent_Declare(
     eigen
-    URL https://gitlab.com/libeigen/eigen/-/archive/5.0.0/eigen-5.0.0.zip
-    URL_HASH MD5=3804ac4802bb18a75874d7a165c5c6f3  
+    URL https://gitlab.com/libeigen/eigen/-/archive/5.0.1/eigen-5.0.1.zip
+    URL_HASH MD5=b8e2be4dcc4d9a455584af1b28323567  
 )
 FetchContent_MakeAvailable(eigen)
 
