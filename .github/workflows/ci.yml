@@ -24,7 +24,7 @@ jobs:
       image: docker://archlinux:latest
     steps:
       - uses: actions/checkout@v5
-      - run: pacman -Syu --noconfirm cmake ninja gcc catch2
+      - run: pacman -Syu --noconfirm cmake ninja gcc
 
       - run: cmake -G Ninja -S . -B build -DCMAKE_BUILD_TYPE=Release
       - run: cmake --build build --config Release
